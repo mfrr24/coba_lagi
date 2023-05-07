@@ -58,7 +58,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ ESC      │  1       │  2       │  3       │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │  :       │
-            &kp ESC    &kp GRAVE   &kp AT    &kp HASH   &kp PIPE       &kp CARET  &kp ASTRK  &kp MINUS  &kp C      &kp BSCP
+            &kp ESC    &kp GRAVE   &kp AT    &kp HASH   &kp PIPE       &kp CARET  &kp ASTRK  &kp MINUS  &kp EQUAL  &kp C
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ DELETE   │  4       │  5       │  6       │          │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │  ;       │
             &kp TAB    &kp AMPS   &kp DLLR   &none      &kp EXCL       &kp LT     &kp GT     &kp LPAR   &kp RPAR   &kp ENTER
