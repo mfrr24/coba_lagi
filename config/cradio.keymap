@@ -58,7 +58,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ ESC      │  1       │  2       │  3       │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │  :       │
-            &kp ESC    &kp GRAVE   &kp AT    &kp HASH   &kp PIPE       &kp CARET  &kp ASTRK  &kp MINUS  &kp EQUAL  &kp C
+            &kp ESC    &kp GRAVE   &kp AT    &kp HASH   &kp PIPE       &kp CARET  &kp ASTRK  &kp MINUS  &kp EQUAL  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ DELETE   │  4       │  5       │  6       │          │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │  ;       │
             &kp TAB    &kp AMPS   &kp DLLR   &none      &kp EXCL       &kp LT     &kp GT     &kp LPAR   &kp RPAR   &kp ENTER
@@ -76,7 +76,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │  [       │  {       │  }       │          │   │  ^       │  (       │  )       │  ]       │  ~       │
-            &kp ESC    &none      &none      &kp LC(Y)  &kp LC(Z)      &kp PG_UP  &none      &kp UP     &none      &kp BSCP   
+            &kp ESC    &none      &none      &kp LC(Y)  &kp LC(Z)      &kp PG_UP  &none      &kp UP     &none      &kp BSPC   
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │  =       │  \       │  `       │
             &kp TAB    &kp LC(S)  &none      &none      &kp LC(F)      &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &kp ENTER
@@ -94,7 +94,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
-            &kp ESC    &kp N1     &kp N2     &kp N3     &kp N0         &none      &kp MINUS  &kp PLUS   &kp EQUAL  &kp BSCP
+            &kp ESC    &kp N1     &kp N2     &kp N3     &kp N0         &none      &kp MINUS  &kp PLUS   &kp EQUAL  &kp BSPC
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
             &kp TAB    &kp N4     &kp N5     &kp N6     &kp COMMA      &none      &none      &kp FSLH   &kp ASTRK  &kp ENTER
