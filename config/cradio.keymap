@@ -58,7 +58,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ ESC      │  1       │  2       │  3       │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │  :       │
-            &kp ESC    &kp GRAVE   &kp AT    &kp HASH   &kp PIPE       &kp CARET  &kp STAR   &kp MINUS  &kp EQUAL  &kp BSCP
+            &kp ESC    &kp GRAVE   &kp AT    &kp HASH   &kp PIPE       &kp CARET  &kp ASTRK  &kp MINUS  &kp EQUAL  &kp BSCP
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│ DELETE   │  4       │  5       │  6       │          │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │  ;       │
             &kp TAB    &kp AMPS   &kp DLLR   &none      &kp EXCL       &kp LT     &kp GT     &kp LPAR   &kp RPAR   &kp ENTER
@@ -97,7 +97,7 @@
             &kp ESC    &kp N1     &kp N2     &kp N3     &kp N0         &none      &kp MINUS  &kp PLUS   &kp EQUAL  &kp BSCP
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
-            &kp TAB    &kp N4     &kp N5     &kp N6     &kp COMMA      &none      &none      &kp FSLH   &kp STAR   &kp ENTER
+            &kp TAB    &kp N4     &kp N5     &kp N6     &kp COMMA      &none      &none      &kp FSLH   &kp ASTRK  &kp ENTER
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
             &kp LCTRL  &kp N7     &kp N8     &kp N9     &kp DOT        &none      &none      &none      &to SIGN   &to NAV
