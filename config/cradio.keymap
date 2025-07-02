@@ -3,7 +3,6 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
 
 #define TYPE   0
 #define SIGN   1
@@ -24,97 +23,57 @@
             bindings = <&kp>, <&kp>;
         };
     };
-    
+
     keymap {
         compatible = "zmk,keymap";
+
         default_layer {
             label = "TYPE";
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-            &kp Q      &kp W      &kp E      &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            &kp A      &kp S      &kp  D     &kp  F     &kp G          &kp H      &kp J      &kp  K     &kp  L     &kp SEMICOLON
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp LSHFT  &to TYPE       &kp SPACE  &to SIGN
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+&kp Q  &kp W  &kp E  &kp R      &kp T    &kp Y      &kp U  &kp I      &kp O    &kp P
+&kp A  &kp S  &kp D  &kp F      &kp G    &kp H      &kp J  &kp K      &kp L    &kp SEMICOLON
+&kp Z  &kp X  &kp C  &kp V      &kp B    &kp N      &kp M  &kp COMMA  &kp DOT  &kp FSLH
+                     &kp LSHFT  &to 0    &kp SPACE  &to 1
             >;
         };
 
-        sgin_layer {
+        num_layer {
             label = "SIGN";
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ ESC      │  1       │  2       │  3       │          │   │ HOME     │ PAGE DN  │ PAGE UP  │ END      │  :       │
-            &kp ESC    &kp GRAVE   &kp AT    &kp HASH   &kp PIPE       &kp CARET  &kp ASTRK  &kp MINUS  &kp EQUAL  &kp BSPC
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ DELETE   │  4       │  5       │  6       │          │   │ LEFT     │ DOWN     │ UP       │ RIGHT    │  ;       │
-            &kp TAB    &kp AMPS   &kp DLLR   &none      &kp EXCL       &kp LT     &kp GT     &kp LPAR   &kp RPAR   &kp ENTER
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ CAPS     │  7       │  8       │  9       │  0       │   │          │          │          │          │          │
-            &kp RGUI   &none      &kp SQT    &kp DQT    &kp UNDER      &kp LBKT   &kp RBKT   &kp LBRC   &kp RBRC   &to NAV
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp LSHFT  &to TYPE       &kp SPACE  &to NUMB
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+&kp ESC           &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp N0       &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp CARET  &kp ASTERISK  &kp BSPC
+&kp TAB           &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp EQUAL    &kp SLASH             &none                  &none      &none         &kp ENTER
+&kp LEFT_CONTROL  &kp N7        &kp N8        &kp N9        &kp MINUS    &to 3                 &to 4                  &kp COMMA  &kp PERIOD    &kp DELETE
+                                              &kp LSHFT     &to 0        &kp SPACE             &to 2
+            >;
+        };
+
+        code_layer {
+            label = "NAV";
+            bindings = <
+&kp ESC           &kp EXCLAMATION  &kp AMPERSAND  &kp PIPE   &kp DOUBLE_QUOTES    &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp CARET         &kp ASTERISK  &kp BSPC
+&kp TAB           &kp AT_SIGN      &kp DOLLAR     &kp SQT    &kp EQUAL            &kp SLASH             &kp LESS_THAN          &kp GREATER_THAN  &none         &kp ENTER
+&kp LEFT_CONTROL  &none            &none          &none      &kp MINUS            &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp COMMA         &kp PERIOD    &kp DEL
+                                                  &kp LSHFT  &to 0                &to 1                 &none
             >;
         };
 
         nav_layer {
-            label = "NAV";
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │  [       │  {       │  }       │          │   │  ^       │  (       │  )       │  ]       │  ~       │
-            &kp ESC    &none      &none      &kp LC(Y)  &kp LC(Z)      &kp PG_UP  &none      &kp UP     &none      &kp BSPC   
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  !       │  @       │  #       │  $       │  %       │   │  *       │  -       │  =       │  \       │  `       │
-            &kp TAB    &kp LC(S)  &none      &none      &kp LC(F)      &kp PG_DN  &kp LEFT   &kp DOWN   &kp RIGHT  &kp ENTER
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │  &       │  _       │  +       │  │       │          │
-            &to OTHE   &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(H)      &kp HOME   &kp END    &none      &kp PSCRN  &kp DEL
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp LSHFT  &to TYPE       &kp SPACE  &to NUMB
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-
-        numb_layer  {
             label = "NUMB";
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
-            &kp ESC    &kp N1     &kp N2     &kp N3     &kp N0         &none      &kp MINUS  &kp PLUS   &kp EQUAL  &kp BSPC
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
-            &kp TAB    &kp N4     &kp N5     &kp N6     &kp COMMA      &none      &none      &kp FSLH   &kp ASTRK  &kp ENTER
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
-            &kp LCTRL  &kp N7     &kp N8     &kp N9     &kp DOT        &none      &none      &none      &to SIGN   &to NAV
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp LSHFT  &to TYPE       &kp SPACE  &none
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+&kp PRINTSCREEN  &kp F2  &kp LS(F3)  &kp F4        &none    &none      &kp PAGE_UP     &kp UP_ARROW    &kp PAGE_DOWN    &none
+&kp TAB          &kp N4  &kp N5      &kp N6        &none    &none      &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &none
+&kp LEFT_GUI     &kp N7  &kp N8      &kp N9        &none    &none      &kp HOME        &none           &kp END          &none
+                                     &kp LEFT_ALT  &to 0    &kp SPACE  &none
             >;
         };
 
-
-        othe_layer  {
+        othe_layer {
             label = "OTHE";
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ RESET    │          │          │          │PROFILE 0 │   │          │          │          │          │  RESET   │
-            &kp F1     &kp F2     &kp F3     &kp F4     &kp F5         &kp F6     &kp F7     &kp F8     &kp F9     &kp F10
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│BOOTLOADER│          │          │          │PROFILE 1 │   │          │          │          │          │BOOTLOADER│
-            &none      &kp LC(I)  &kp LC(U)  &kp LC(B)  &none          &bt BT_PRV &bt BT_NXT &none      &none      &none
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │ CLEAR BT │PROFILE 2 │   │          │          │          │          │          │
-            &kp LCTRL  &kp LC(L)  &kp LC(E)  &kp LC(R)  &kp LC(J)      &none      &none      &none      &none      &none   
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &kp LSHFT  &to TYPE       &none      &none
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+&kp LC(Q)  &kp LC(W)  &kp LC(E)  &kp LC(R)  &kp LC(T)    &kp LC(Y)  &kp LC(U)  &kp LC(I)  &kp LC(O)  &kp LC(P)
+&kp LC(A)  &kp LC(S)  &kp LC(D)  &kp LC(F)  &kp LC(G)    &kp LC(H)  &kp LC(J)  &kp LC(K)  &kp LC(L)  &none
+&kp LC(Z)  &kp LC(X)  &kp LC(C)  &kp LC(V)  &kp LC(B)    &kp LC(N)  &kp LC(M)  &none      &none      &none
+                                 &kp LSHFT  &to 0        &none      &none
             >;
         };
     };
